@@ -8,9 +8,9 @@
 .default z=0
 
 * Make superconducting
-*.default lambda = 85e-3
+.default lambda = 85e-3
 
-.default nhinc=10 nwinc=20
+*.default nhinc=10 nwinc=20
 * Squid Loop
 
 N1 x=-10.0 y=10.0
