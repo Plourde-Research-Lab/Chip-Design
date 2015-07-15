@@ -1,0 +1,43 @@
+* Qubit Loop Test Mod 7.0
+* 07/15/2015
+
+* The following line names micrometers as the length units for the rest of the file
+.units um
+
+* Make z=0 the default z coordinate
+.default z=0
+
+* Make superconducting
+*.default lambda = 85e-3
+
+.default nhinc=10 nwinc=20
+* Squid Loop
+
+N1 x=-10.0 y=10.0
+N2 x=10.0 y=10.0
+N3 x=10.0 y=-10.0
+N4 x=-10.0 y=-10.0
+N5 x=-10.0 y=10.0
+
+E1 N1 N2 w=.1 h=0.1
+E2 N2 N3 w=.1 h=0.1
+E3 N3 N4 w=.1 h=0.1
+E4 N4 N5 w=.1 h=0.1
+
+* Capacitor
+
+N6 x=225 y=40
+N7 x=-225 y=40
+N8 x=225 y=-40
+N9 x=-225 y=-40
+
+E5 N6 N7 w=60 h=0.1
+E6 N8 N9 w=60 h=0.1
+
+.external N1 N5
+
+* Frequency range of interest. (ndec=Number of Points per Decade)
+.freq fmin=1 fmax=1 ndec=1
+
+* All input files must end with:
+.end
