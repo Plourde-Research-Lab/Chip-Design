@@ -1,0 +1,33 @@
+* Squid Loop
+* 7/16/2015 
+
+* The following line names micrometers as the length units for the rest of the file
+.units um
+
+* Make z=0 the default z coordinate
+.default z=0
+
+* Make superconducting
+.default lambda = 85e-3
+
+.default nhinc=1 nwinc=10
+* Squid Loop
+
+N1 x=-7.5 y=7.5
+N2 x=7.5 y=7.5
+N3 x=7.5 y=-7.5
+N4 x=-7.5 y=-7.5
+N5 x=-7.5 y=7.5
+
+E1 N1 N2 w=.1 h=0.1
+E2 N2 N3 w=.1 h=0.1
+E3 N3 N4 w=.1 h=0.1
+E4 N4 N5 w=.1 h=0.1
+
+.external N1 N5
+
+* Frequency range of interest. (ndec=Number of Points per Decade)
+.freq fmin=.1 fmax=.1 ndec=1
+
+* All input files must end with:
+.end
