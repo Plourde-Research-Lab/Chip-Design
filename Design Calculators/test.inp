@@ -1,0 +1,41 @@
+* test.inp
+* Generated on 10:33:30 03/29/16
+
+*------------ Params  ------------
+.Units um
+
+.default lambda=0.085
+
+.default nwinc=10 nhinc=10
+
+*------------ Shapes  ------------
+
+* Shape 0
+N00 x=-24.0 y=-142.0 z=0
+N01 x=-24.0 y=-240.0 z=0
+E00 N00 N01 w=2.0 h=0.1
+
+* Shape 1
+N10 x=0.0 y=-130.0 z=0
+N11 x=-20.0 y=-130.0 z=0
+N12 x=-20.0 y=-140.0 z=0
+N13 x=20.0 y=-140.0 z=0
+N14 x=20.0 y=-130.0 z=0
+N15 x=0.0 y=-130.0 z=0
+E10 N10 N11 w=2.0 h=0.1
+E11 N11 N12 w=2.0 h=0.1
+E12 N12 N13 w=2.0 h=0.1
+E13 N13 N14 w=2.0 h=0.1
+E14 N14 N15 w=2.0 h=0.1
+
+*------------ Externals  ------------
+
+* 0
+.external N00 N01
+
+* 1
+.external N10 N15
+
+* Define Frequency
+.freq fmin=0.15915 fmax=0.15915 ndec=1.0
+.end
